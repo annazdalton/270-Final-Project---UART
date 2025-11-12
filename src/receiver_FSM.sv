@@ -1,4 +1,4 @@
-module receiverFSM(
+module receiver_FSM(
     input logic clk, nrst,
     input logic baud_tick, data_i, 
     output logic shift_en, parity_en, frame_en,
@@ -88,4 +88,5 @@ module receiverFSM(
             default: begin nextState = IDLE; end
         endcase
     end
+
 endmodule
