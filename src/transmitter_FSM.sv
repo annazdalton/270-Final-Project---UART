@@ -1,5 +1,6 @@
 module transmitter_FSM(
-    input logic clk, nrst, baud_tick, tx_valid,
+    input logic clk, nrst, baud_tick, tx_valid, count_overflow,
+    input logic [3:0] count_data,
     output logic start, stop, count_en, count_clear,
     output logic select
 );
@@ -26,6 +27,7 @@ module transmitter_FSM(
         case(state) 
             IDLE: begin 
                 count_en = 0;
+                count_clear = 0;
                 if(tx_valid) begin
                     nextState = START;
                 end else begin
@@ -34,6 +36,7 @@ module transmitter_FSM(
             end
             START: begin 
                 count_en = 0;
+                count_clear = 0;
                 if(baud_tick) begin
                     nextState = DATA;
                 end else begin
@@ -42,17 +45,44 @@ module transmitter_FSM(
             end
             DATA: begin 
                 count_en = 1;
-
+                count_clear = 0;
+                if(count_data < 4'd8) begin
+                    nextState == DATA;
+                end else if (baud_tick == 1) begin
+                    count_en = 0;
+                    count_clear = 1;
+                    if(parity_en == 0) begin
+                        nextState = STOP;
+                    end else begin
+                        nextState = PARITY;
+                    end
+                end else begin
+                    nextState = DATA;
+                end
             end
             PARITY: begin 
+                count_clear = 0;
                 count_en = 0;
+                //add logic once parity gen is done
+                if(baud_tick) begin
+                    nextState = STOP
+                end else begin
+                    nextState = PARITY;
+                end
             end
             STOP: begin 
+                count_clear = 0;
                 count_en = 0;
+                if(baud_tick) begin
+                    nextState = IDLE;
+                end else begin
+                    nextState = STOP;
+                end
             end
             default: begin
                 nextState = IDLE; 
                 count_en = 0;
+                count_clear = 0;
             end
         endcase
     end
