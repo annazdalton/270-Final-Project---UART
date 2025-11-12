@@ -10,6 +10,7 @@
 ![UART Transmitter RTL Diagram](/img/transmitterRTL.png)
 
 ### Receiver RTL Diagram
+![UART Transmitter RTL Diagram](/img/receiverRTL.png)
 
 ### Transmitter State Transition Diagram 
 ![UART Transmitter FSM Diagram](/img/transmitterFSM.png)
