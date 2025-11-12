@@ -14,3 +14,6 @@
 
 ### Transmitter State Transition Diagram 
 ![UART Transmitter FSM Diagram](/img/transmitterFSM.png)
+
+### Receiver State Transition Diagram 
+![UART Receiver FSM Diagram](/img/receiverFSM.png)
