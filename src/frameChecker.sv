@@ -10,6 +10,5 @@ module frameChecker(
             frame_error = 1'b0;
         end
     end
-
-
 endmodule
+
