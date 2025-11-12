@@ -1,4 +1,4 @@
-module receiver_SIPOregister (
+module receiver_SIPO (
     input logic clk, nrst,
     input logic shift_en, data_i,
     output logic [7:0] sipo_o
@@ -22,3 +22,4 @@ module receiver_SIPOregister (
     end
 
 endmodule
+
