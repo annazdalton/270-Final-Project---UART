@@ -1,4 +1,4 @@
-module frameCheck(
+module frameChecker(
     input logic frame_en, stop_bit, //stop_bit is data_i from transmitter
     output logic frame_error
 );
@@ -10,5 +10,6 @@ module frameCheck(
             frame_error = 1'b0;
         end
     end
+
 
 endmodule
