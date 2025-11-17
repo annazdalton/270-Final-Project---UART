@@ -3,6 +3,14 @@
 
 ## Project Overview
 
+### Contributions
+| Contributor | Contribution | Description |
+| ----------- | ------------ | ----------- |
+| Anna Dalton | Top Level RTL, Transmitter RTL Diagram, Transmitter State Diagram | ... | 
+| ----------- | ------------ | ----------- |
+| Kameswari Mantha | Receiver RTL Diagram, Receiver State Diagram | ... |
+| ----------- | ------------ | ----------- |
+
 ### Top Level RTL Diagram
 ![UART Transmitter and Receiver RTL Diagram](/img/topLevelRTL.png)
 
