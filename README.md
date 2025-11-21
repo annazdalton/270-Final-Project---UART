@@ -6,7 +6,7 @@
 ### Contributions
 | Name | Contribution |
 | ---- | ------------ |
-| Anna Dalton | Top Level RTL, Transmitter RTL Diagram, Transmitter State Diagram, counter.sv, transmitterMux.sv, transmitter_FSM.sv, transmitter_PISO.sv, testbenches for mentioned modules |
+| Anna Dalton | Top Level RTL, Transmitter RTL Diagram, Transmitter State Diagram, counter.sv, transmitterMux.sv, transmitter_FSM.sv, transmitter_PISO.sv, baud_generator.svtestbenches for mentioned modules |
 | Kameswari Mantha | Receiver RTL Diagram, Receiver State Diagram, frameChecker.sv, parityChecker.sv, receiverFSM.sv, receiver_SIPO.sv, testbenches for mentioned modules |
 
 ### Top Level RTL Diagram
